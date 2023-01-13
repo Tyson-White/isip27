@@ -1,0 +1,57 @@
+class GraphicsCard {
+  constructor(props) {
+    this.interface = "PCI-Express 1.1";
+    this.gpuManufacturer = "MSI"
+    this.graphicsProcessor = props.graphicsProcessor;
+    this.gpuFrequency = "1590 МГц";
+    this.cardMemory = "11 ГБ";
+  }
+
+  set name(newName) {
+    this.graphicsProcessor = newName
+  }
+
+  specifications() {
+    this.dateOfRealise = "2018"
+
+    document.write(`Интерфейс: ${this.interface} </br> Производитель: ${this.gpuManufacturer} </br>
+    Граф. процессор: ${this.graphicsProcessor} </br> Частота: ${this.gpuFrequency} </br> Память: ${this.cardMemory}
+    </br> Дата выхода: ${this.dateOfRealise}`)
+  }
+
+}
+
+const card1 = new GraphicsCard({
+  graphicsProcessor: "GeForce RTX 2080"
+})
+
+
+card1.specifications()
+document.write("<br> </br>")
+const card2 = new GraphicsCard({
+  graphicsProcessor: "GeForce GTX 1080"
+})
+
+card2.specifications()
+
+class Advance extends GraphicsCard {
+  constructor(props) {
+    super(props) 
+    this.price = 29999
+  }
+
+  specifications() {
+    this.dateOfRealise = "2018"
+
+    document.write(`Интерфейс: ${this.interface} </br> Производитель: ${this.gpuManufacturer} </br>
+    Граф. процессор: ${this.graphicsProcessor} </br> Частота: ${this.gpuFrequency} </br> Память: ${this.cardMemory}
+    </br> Дата выхода: ${this.dateOfRealise} </br> Цена: ${this.price} р.`)
+  }
+
+}
+
+const card3 = new Advance({
+  graphicsProcessor: "GeForce RTX 2060"
+})
+document.write("<br> </br>")
+card3.specifications()
