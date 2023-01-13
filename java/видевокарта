@@ -7,7 +7,11 @@ class GraphicsCard {
     this.cardMemory = "11 ГБ";
   }
 
-  set name(newName) {
+  get getName() {
+    return this.graphicsProcessor
+  }
+
+  set setName(newName) {
     this.graphicsProcessor = newName
   }
 
@@ -37,7 +41,7 @@ card2.specifications()
 class Advance extends GraphicsCard {
   constructor(props) {
     super(props) 
-    this.price = 29999
+    this.price = props.price
   }
 
   specifications() {
@@ -50,8 +54,42 @@ class Advance extends GraphicsCard {
 
 }
 
+const array = []
+
 const card3 = new Advance({
-  graphicsProcessor: "GeForce RTX 2060"
+  graphicsProcessor: "GeForce RTX 2060",
+  price: 29999
 })
+
+array.push(card3) 
+
 document.write("<br> </br>")
 card3.specifications()
+
+const card4 = new Advance({
+  graphicsProcessor: "GeForce RTX 2070",
+  price: 22399
+})
+
+array.push(card4) 
+
+const card5 = new Advance({
+  graphicsProcessor: "GeForce RTX 2080",
+  price: 33399
+})
+
+array.push(card5) 
+
+const priceMax = array.filter(item => item.price === Math.max(...array.map(item => item.price)))
+const priceMin = array.filter(item => item.price === Math.min(...array.map(item => item.price)))
+
+var sum = 0
+const a = array.map(item => item.price)
+
+for (i = 0; i++; i < a.length) {
+  sum += a[i]
+}
+
+console.log(priceMax)
+console.log(priceMin)
+console.log(sum)
