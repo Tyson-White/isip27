@@ -1,0 +1,28 @@
+const password = document.querySelector('.password')
+const email = document.querySelector('.email')
+const acceptPassword = document.querySelector('.accept-password').value
+const err = document.querySelector('.error')
+
+const button = document.querySelector('.accept')
+
+const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+
+
+function isEmailValid(value) {
+  return EMAIL_REGEXP.test(value);
+}
+const validate = () => {
+  if (isEmailValid(email.value) === false) {
+    err.innerHTML = "Неверный e-mail"
+  }
+  else if (password.value.length < 8) {
+    err.innerHTML = "Маленький пароль"
+  } else if (password !== acceptPassword) {
+    err.innerHTML = "Пароли не совпадают"
+  }
+}
+
+button.addEventListener('click', (e) => {
+  e.preventDefault();
+  validate();
+})
