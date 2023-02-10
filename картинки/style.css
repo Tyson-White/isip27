@@ -1,0 +1,42 @@
+* {
+  margin: 6px;
+}
+
+.qwe {
+  width: 80%;
+  margin: 50px auto;
+}
+.qwe .title {
+  text-align: end;
+  margin-bottom: 50px;
+}
+.qwe h1 {
+  color: red;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 40px;
+}
+.qwe blockquote {
+  font-style: italic;
+  font-size: 20px;
+}
+.qwe .title1 {
+  margin-top: 20px;
+  text-decoration: underline;
+  font-weight: 600;
+  font-size: 30px;
+}
+.qwe h3 {
+  font-size: 22px;
+}
+.qwe ol {
+  font-size: 20px;
+}
+.qwe ol span {
+  font-weight: 600;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}/*# sourceMappingURL=style.css.map */
