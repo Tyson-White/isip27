@@ -1,0 +1,77 @@
+class Product {
+    constructor(name, price, rate) {
+        this.name = name
+        this.price = price
+        this.rate = rate
+    }
+}
+
+const products = [ // Все продукты
+    new Product('sneakers', 12900, 5.0),
+    new Product('sneakers', 11900, 5.0),
+    new Product('sneakers', 10900, 5.0),
+    new Product('pants', 3000, 5.0),
+    new Product('pants', 5000, 5.0),
+    new Product('pants', 2000, 5.0)
+]
+
+const sneakersList = products.filter(item => // список кроссовок
+    item.name === 'sneakers'
+)
+
+
+
+const pantsList = products.filter(item => // список штанов
+    item.name === 'pants'
+)
+
+class Category { 
+    constructor(name, list) {
+        this.name = name
+        this.list = list
+    }
+}
+
+const sneakers = new Category('Sneakers', sneakersList)
+const pants = new Category('pants', pantsList)
+
+class Basket {
+    constructor(purchased) {
+        this.purchased = purchased
+    }
+}
+
+const purchasedList = [
+    new Product('pants', 5000, 5.0),
+    new Product('sneakers', 10900, 5.0)
+]
+
+class User {
+    constructor(login, password) {
+        this.login = login
+        this.password = password
+        this.basket = new Basket(purchasedList)
+    }
+}
+const userList = [
+    new User('Alex', 'fdf43gfgd3'),
+    new User('Andrew', 'vxcv98398vkjoj')
+]
+
+
+console.log(products)
+
+for (item of userList) {
+    let sum = 0
+    for (i of item.basket.purchased) {
+        sum += i.price
+    }
+    console.log(
+        `Покупатель: ${item.login}, совершил покупку на сумму: ${sum}р`
+    )
+    console.log('Список товаров: ')
+    for (prod of item.basket.purchased) {
+        console.log(prod)
+    }
+}
+
