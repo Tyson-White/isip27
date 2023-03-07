@@ -1,0 +1,30 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        fruits = ['apple', 'pineapple', 'mango', 'melon', 'grape'];
+        citrus = ['orange', 'lemon', 'lime']
+        advance = ['pear', 'cherry', 'plum', 'raspberry', 'strawberry']
+
+        console.log(fruits)
+        console.log(citrus)
+        console.log([...fruits, ...citrus])
+        console.log(fruits.splice(3, 0, ...advance))
+        console.log(fruits.slice(0, -3))
+        console.log(fruits.sort())
+        console.log(fruits.reverse())
+        console.log(fruits.sort(function (a, b) {
+            return b.length - a.length;
+        }))
+    </script>
+</body>
+
+</html>
