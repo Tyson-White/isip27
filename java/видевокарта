@@ -94,3 +94,32 @@ console.log(priceMax)
 console.log(priceMin)
 console.log(sum)
 в
+
+
+
+
+class GraphicsCard {
+  constructor(props) {
+    this.interface = "PCI-Express 1.1";
+    this.gpuManufacturer = "MSI"
+    this.graphicsProcessor = props.graphicsProcessor;
+    this.gpuFrequency = "1590 МГц";
+    this.cardMemory = "11 ГБ";
+  }
+
+
+  specifications() {
+
+
+    document.write(`Интерфейс: ${this.interface} </br> Производитель: ${this.gpuManufacturer} </br>
+    Граф. процессор: ${this.graphicsProcessor} </br> Частота: ${this.gpuFrequency} </br> Память: ${this.cardMemory}
+    </br>`)
+  }
+
+}
+
+const card1 = new GraphicsCard({
+  graphicsProcessor: "GeForce RTX 2080"
+})
+
+card1.specifications()
