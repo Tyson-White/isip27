@@ -1,65 +1,44 @@
-function pickWord() {
-	let words = [
-		"программа",
-		"макака",
-		"прекрасный",
-	];
+let texts = [];
+let count = 0
+const notes = document.getElementById('notes')
+const save = document.querySelector('#save')
+const create = document.querySelector('#create')
+let textarea = document.querySelector('.area')
 
-	return words[Math.floor(Math.random() * words.length)];
-}
+create.addEventListener('click', () => {
+    save.dataset.mode = 'create'
+    textarea.value = ""
+})
 
-function setupAnswerArray(word) {
-	let answerArray = []
-	for (var i = 0; i < word.length; i++) {
-		answerArray[i] = "_";
-	}
-	return answerArray
-}
+notes.addEventListener('click', (e) => {
+    let key = e.target.dataset.key
 
-function showPlayerProgress(answerArray) {
-	alert(answerArray.join(" "))
-}
+    if (e.target.className === 'close') {
+        e.target.parentNode.remove()
+    } else {
+        console.log(key)
+        console.log(e.target.classList)
+        textarea.value = texts[key]
+        save.dataset.mode = 'update'
+        save.dataset.key = key
+    }
 
-function getGuess() {
-	let guess = prompt("Угадайте букву, или нажмите Отмена для выхода из игры");
-	return guess
-}
+})
 
-function updateGameState(guess, word, answerArray){
-	let count = 0
-	for (var j = 0; j < word.length; j++) {
-		if (word[j] === guess) {
-			answerArray[j] = guess;
-			count += 1
-		}
-	}
-	return count
-}
-
-function showAnswerAndCongratulatePlayer(answerArray) {
-	alert(answerArray.join(" "));
-	alert("Отлично! Было загадано слово " + word);
-}
-
-
-
-var word = pickWord();
-
-var answerArray = setupAnswerArray(word);
-
-var remainingLetters = word.length;
-
-while (remainingLetters > 0) {
-	showPlayerProgress(answerArray);
-
-	var guess = getGuess();
-	if (guess === null) {
-		break;
-	} else if (guess.length !== 1) {
-		alert("Пожалуйста, введите одиночную букву.")
-	} else {
-		var correctGuesses = updateGameState(guess, word, answerArray);
-		remainingLetters -= correctGuesses;
-	}
-}
-showAnswerAndCongratulatePlayer(answerArray);
+save.addEventListener('click', function () {
+    let mode = this.dataset.mode;
+    if (mode == 'create') {
+        const li = document.createElement('li')
+        li.dataset.key = count
+        texts.push(textarea.value)
+        li.innerHTML = `Запись ${count + 1}
+        <span class="close">X</span>`
+        count++
+        notes.appendChild(li)
+    }
+    if (mode == 'update') {
+        let key = this.dataset.key;
+        console.log(key)
+        texts[key] = textarea.value
+    }
+});
