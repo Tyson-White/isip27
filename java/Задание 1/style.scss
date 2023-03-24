@@ -1,0 +1,34 @@
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.loginform {
+  width: 200px;
+  display: flex;
+  margin: 200px auto;
+  flex-direction: column;
+
+  input {
+    height: 30px;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid rgba(102, 102, 102, 0.671);
+    outline: none;
+  }
+  
+  .accept {
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgb(105, 235, 163);
+    color: #fff;
+    font-weight: 600;
+  }
+  .error {
+    color: red;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}

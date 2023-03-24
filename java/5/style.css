@@ -1,0 +1,38 @@
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  text-align: center;
+}
+
+.form {
+  width: 15%;
+  margin: 0 auto;
+  border-bottom: 2px solid;
+  padding-bottom: 30px;
+}
+.form .inp {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.form .inp input {
+  margin-left: 20px;
+}
+
+.inp1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.i {
+  display: flex;
+}
+
+.buttons {
+  margin-top: 30px;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */

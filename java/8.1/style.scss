@@ -1,0 +1,23 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  input {
+    width: 100px;
+    height: 30px;
+    margin-bottom: 30px;
+  }
+  
+  button {
+    width: 100px;
+  }
+}
+
+.window {
+  position: absolute;
+  left: 300px;
+  height: 100px;
+  width: 200px;
+  background-color: #666;
+  color: #fff;
+}

@@ -1,0 +1,47 @@
+.title {
+  text-align: center;
+}
+
+.list {
+  margin: 0 auto;
+  width: 700px;
+}
+.list > li {
+  background-color: skyblue;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.list2 {
+  line-height: 30px;
+  list-style-type: none;
+  border-left: 10px double blue;
+}
+.list2 li {
+  margin-bottom: 20px;
+}
+.list2 .list2-elem1 {
+  letter-spacing: 8px;
+}
+.list2 .wt {
+  font-weight: 600;
+}
+.list2 .under {
+  text-decoration: underline;
+}
+.list2 .top {
+  text-decoration: overline;
+}
+.list2 .p {
+  text-decoration: line-through;
+}
+.list2 .list2-elem4 {
+  background-color: yellow;
+  display: inline-block;
+}
+.list2 .list2-elem5 {
+  margin-left: 60px;
+}
+.list2 .list2-elem7 {
+  font-size: 20px;
+}/*# sourceMappingURL=style.css.map */

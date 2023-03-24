@@ -1,0 +1,50 @@
+*{
+  margin: 6px;
+}
+
+.qwe {
+  width: 80%;
+  margin: 50px auto;
+  
+  .title {
+    text-align: end;
+    margin-bottom: 50px;
+  }
+
+  h1 {
+    color: red;
+    font-weight: 600;
+    margin-bottom: 20px;
+  font-size: 40px;
+  }
+
+ blockquote {
+   font-style: italic; font-size: 20px;
+   
+  }
+  
+  .title1 {
+    margin-top: 20px;
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 30px;
+  }
+
+  h3 {
+font-size: 22px;
+  }
+
+  ol {
+font-size: 20px;
+    span {
+      font-weight: 600
+    }
+  }
+}
+.wew {
+
+}
+a {
+  color: black;
+  text-decoration: none;
+}
